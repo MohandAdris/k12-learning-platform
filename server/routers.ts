@@ -404,6 +404,12 @@ export const appRouter = router({
   // ============================================
   
   lectures: router({
+    list: protectedProcedure
+      .input(z.object({ unitId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getLecturesByUnitId(input.unitId);
+      }),
+    
     get: protectedProcedure
       .input(z.object({ id: z.number() }))
       .query(async ({ input }) => {

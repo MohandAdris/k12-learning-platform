@@ -222,6 +222,13 @@ export default function CourseUnits() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setLocation(`/teacher/units/${unit.id}/lectures`)}
+                        >
+                          {t("lectures.manageLectures")}
+                        </Button>
+                        <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => handleEditUnit(unit)}

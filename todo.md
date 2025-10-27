@@ -233,3 +233,16 @@
 ## Known Issues
 - [ ] Delete confirmation dialog shows translation key instead of actual translated text
 
+
+
+
+## Autonomous Completion - Phase 1
+- [x] Create lecture management interface (list view with manage lectures button)
+- [x] Create lecture creation/editing form with multilingual support
+- [x] Implement video URL input for lectures (with captions and summaries)
+- [ ] Add lecture reordering functionality (drag and drop)
+- [ ] Add attachment upload for lectures
+- [ ] Create unit creation/editing forms (already exists in CourseUnits)
+- [ ] Add analytics dashboard for teachers
+- [ ] Create student management interface
+
