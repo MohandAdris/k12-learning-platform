@@ -8,7 +8,7 @@ import { trpc } from "@/lib/trpc";
 import { ArrowLeft, Save, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useRoute } from "wouter";
+import { Link, useLocation, useRoute } from "wouter";
 import { toast } from "sonner";
 
 export default function CourseEdit() {
@@ -146,14 +146,21 @@ export default function CourseEdit() {
                 <p className="text-gray-600 mt-1">{course.course.title}</p>
               </div>
             </div>
-            <Button
-              variant="destructive"
-              onClick={handleDelete}
-              disabled={deleteCourseMutation.isPending}
-            >
-              <Trash2 className="w-4 h-4 mr-2" />
-              {t("common.delete")}
-            </Button>
+              <div className="flex items-center space-x-3">
+                <Link href={`/teacher/courses/${courseId}/units`}>
+                  <Button variant="outline">
+                    {t("units.manageUnits")}
+                  </Button>
+                </Link>
+                <Button
+                  variant="destructive"
+                  onClick={handleDelete}
+                  disabled={deleteCourseMutation.isPending}
+                >
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  {t("common.delete")}
+                </Button>
+              </div>
           </div>
         </div>
       </header>

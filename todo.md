@@ -195,7 +195,7 @@
 - [x] Create course creation form
 - [x] Implement course editing page
 - [x] Add course deletion with confirmation
-- [ ] Create unit management interface (CRUD, reorder)
+- [x] Create unit management interface (CRUD, reorder)
 - [ ] Create lecture management interface (CRUD, video upload)
 - [ ] Implement course publishing workflow
 

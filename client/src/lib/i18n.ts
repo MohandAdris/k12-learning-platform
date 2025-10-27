@@ -103,6 +103,8 @@ const resources = {
         editUnit: 'Edit Unit',
         deleteUnit: 'Delete Unit',
         noUnits: 'No units available',
+        manageUnits: 'Manage Units',
+        createFirstUnit: 'Create First Unit',
       },
       
       lectures: {
@@ -183,7 +185,6 @@ const resources = {
         viewDetailedAnalytics: 'View detailed course and student analytics',
         schools: 'Schools',
         manageSchools: 'Manage schools and organizations',
-        status: 'Status',
       },
       
       // Students (Teacher view)
@@ -395,6 +396,8 @@ const resources = {
         editUnit: 'تعديل الوحدة',
         deleteUnit: 'حذف الوحدة',
         noUnits: 'لا توجد وحدات متاحة',
+        manageUnits: 'إدارة الوحدات',
+        createFirstUnit: 'إنشاء الوحدة الأولى',
       },
       
       lectures: {
@@ -474,8 +477,7 @@ const resources = {
         analytics: 'التحليلات',
         viewDetailedAnalytics: 'عرض تحليلات مفصلة للدورات والطلاب',
         schools: 'المدارس',
-        manageSchools: 'إدارة المدارس والمؤسسات',
-        status: 'الحالة',
+        manageSchools: 'إدارة المدارس والمنظمات',
       },
       
       // Students (Teacher view)
@@ -687,6 +689,8 @@ const resources = {
         editUnit: 'ערוך יחידה',
         deleteUnit: 'מחק יחידה',
         noUnits: 'אין יחידות זמינות',
+        manageUnits: 'נהל יחידות',
+        createFirstUnit: 'צור יחידה ראשונה',
       },
       
       lectures: {
@@ -767,7 +771,6 @@ const resources = {
         viewDetailedAnalytics: 'צפה באנליטיקה מפורטת של קורסים ותלמידים',
         schools: 'בתי ספר',
         manageSchools: 'נהל בתי ספר וארגונים',
-        status: 'סטטוס',
       },
       
       // Students (Teacher view)
