@@ -32,7 +32,8 @@
 - [x] Create translation files for English, Arabic, Hebrew
 - [x] Add RTL support for Arabic and Hebrew
 - [x] Configure font loading for Arabic and Hebrew scripts
-- [ ] Test language switching functionality- [ ] Add direction detection and CSS adjustments
+- [x] Test language switching functionality
+- [x] Add direction detection and CSS adjustments
 
 ## Phase 4: Student Portal Frontend
 - [x] Create student login page
