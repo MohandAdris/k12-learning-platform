@@ -111,6 +111,36 @@ export async function upsertUser(user: InsertUser): Promise<void> {
   }
 }
 
+export async function updateUser(
+  userId: number,
+  data: {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    preferredLanguage?: 'en' | 'ar' | 'he';
+  }
+) {
+  const db = await getDb();
+  if (!db) {
+    console.warn('[Database] Cannot update user: database not available');
+    return { success: false };
+  }
+
+  try {
+    await db.update(users)
+      .set({
+        ...data,
+        updatedAt: new Date(),
+      })
+      .where(eq(users.id, userId));
+
+    return { success: true };
+  } catch (error) {
+    console.error('[Database] Failed to update user:', error);
+    throw error;
+  }
+}
+
 export async function getUserByOpenId(openId: string) {
   const db = await getDb();
   if (!db) {

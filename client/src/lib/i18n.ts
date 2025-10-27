@@ -186,6 +186,35 @@ const resources = {
         schools: 'Schools',
         manageSchools: 'Manage schools and organizations',
       },
+
+      // Profile
+      profile: {
+        myProfile: "My Profile",
+        manageAccount: "Manage your account and view your progress",
+        personalInfo: "Personal Information",
+        updateYourInfo: "Update your personal information",
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email",
+        preferredLanguage: "Preferred Language",
+        role: "Role",
+        memberSince: "Member Since",
+        myCourses: "My Courses",
+        certificates: "Certificates",
+        myCertificates: "My Certificates",
+        downloadCertificates: "Download your completion certificates",
+        inProgress: "In Progress",
+        notStarted: "Not Started",
+        completed: "Completed",
+        completedOn: "Completed on",
+        downloadCertificate: "Download Certificate",
+        certificateDownloaded: "Certificate downloaded successfully",
+        noEnrollments: "No enrollments yet",
+        startLearning: "Start learning by enrolling in courses",
+        noCertificates: "No certificates yet",
+        completeCourses: "Complete courses to earn certificates",
+        updated: "Profile updated successfully",
+      },
       
       // Students (Teacher view)
       students: {
@@ -232,24 +261,8 @@ const resources = {
         recentActivity: 'Recent Activity',
       },
       
-      // Profile
-      profile: {
-        title: 'Profile',
-        myProfile: 'My Profile',
-        editProfile: 'Edit Profile',
-        firstName: 'First Name',
-        lastName: 'Last Name',
-        email: 'Email',
-        language: 'Language',
-        preferredLanguage: 'Preferred Language',
-        school: 'School',
-        role: 'Role',
-        student: 'Student',
-        teacher: 'Teacher',
-        admin: 'Administrator',
-        joinedDate: 'Joined Date',
-        lastLogin: 'Last Login',
-      },
+      // Profile (merged - removed duplicate)
+      // Keeping comprehensive profile section above
       
       // Settings
       settings: {

@@ -131,9 +131,26 @@ export const appRouter = router({
   }),
 
   // ============================================
+  // USER MANAGEMENT
+  // ============================================
+
+  users: router({
+    updateProfile: protectedProcedure
+      .input(z.object({
+        firstName: z.string().optional(),
+        lastName: z.string().optional(),
+        email: z.string().email().optional(),
+        preferredLanguage: z.enum(['en', 'ar', 'he']).optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        return await db.updateUser(ctx.user.id, input);
+      }),
+  }),
+
+  // ============================================
   // COURSE MANAGEMENT
   // ============================================
-  
+
   courses: router({
     list: protectedProcedure
       .input(z.object({

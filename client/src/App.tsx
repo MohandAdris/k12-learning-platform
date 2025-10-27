@@ -12,6 +12,7 @@ import CourseUnits from "./pages/teacher/CourseUnits";
 import LecturePage from "./pages/student/LecturePage";
 import StudentHome from "./pages/student/StudentHome";
 import CourseDetail from "./pages/student/CourseDetail";
+import StudentProfile from "./pages/student/StudentProfile";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -25,6 +26,7 @@ function Router() {
       <Route path={"/student"} component={StudentHome} />
       <Route path={"/student/course/:id"} component={CourseDetail} />
       <Route path={"/student/lecture/:id"} component={LecturePage} />
+      <Route path={"/student/profile"} component={StudentProfile} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

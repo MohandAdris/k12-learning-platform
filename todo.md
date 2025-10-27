@@ -199,3 +199,15 @@
 - [ ] Create lecture management interface (CRUD, video upload)
 - [ ] Implement course publishing workflow
 
+
+
+
+## Student Profile Dashboard
+- [x] Create student profile page with personal information
+- [x] Add profile editing functionality (name, email, language preference)
+- [x] Display enrolled courses with progress tracking
+- [x] Show completed courses with completion dates
+- [x] Generate and download course completion certificates
+- [x] Add certificate design with course details and student name
+- [ ] Implement certificate verification system
+
