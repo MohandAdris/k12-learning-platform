@@ -167,3 +167,13 @@
 - [ ] Create teacher dashboard home page
 - [ ] Add course creation form for teachers
 
+
+
+
+## Enrollment Implementation
+- [x] Fix enrollment button functionality on course cards
+- [x] Update StudentHome to show enrolled courses in "My Courses" section
+- [ ] Add unenroll functionality
+- [x] Show enrollment status on course detail page
+- [x] Test enrollment flow end-to-end
+

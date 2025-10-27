@@ -9,15 +9,33 @@ import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { BookOpen, Clock, Search, GraduationCap } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { toast } from "sonner";
 
 export default function StudentHome() {
   const { t } = useTranslation();
   const { user } = useAuth();
   
+  const utils = trpc.useUtils();
   const { data: courses, isLoading } = trpc.courses.list.useQuery({});
   const { data: enrollments } = trpc.enrollment.myEnrollments.useQuery();
 
   const enrolledCourseIds = new Set(enrollments?.map(e => e.enrollment.courseId) || []);
+
+  const enrollMutation = trpc.enrollment.enroll.useMutation({
+    onSuccess: () => {
+      utils.enrollment.myEnrollments.invalidate();
+      toast.success(t('courses.enrollSuccess'));
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const handleEnroll = (courseId: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    enrollMutation.mutate({ courseId });
+  };
 
   if (isLoading) {
     return (
@@ -176,12 +194,22 @@ export default function StudentHome() {
                       </div>
                     )}
                   </CardContent>
-                  <CardFooter>
-                    <Link href={`/student/course/${course.id}`} className="w-full">
-                      <Button className="w-full" variant={isEnrolled ? "default" : "outline"}>
-                        {isEnrolled ? t('courses.enrolled') : t('courses.enroll')}
+                  <CardFooter className="flex gap-2">
+                    {!isEnrolled ? (
+                      <Button 
+                        className="flex-1" 
+                        onClick={(e) => handleEnroll(course.id, e)}
+                        disabled={enrollMutation.isPending}
+                      >
+                        {enrollMutation.isPending ? t('common.loading') : t('courses.enroll')}
                       </Button>
-                    </Link>
+                    ) : (
+                      <Link href={`/student/course/${course.id}`} className="flex-1">
+                        <Button className="w-full" variant="default">
+                          {t('courses.viewCourse')}
+                        </Button>
+                      </Link>
+                    )}
                   </CardFooter>
                 </Card>
               );

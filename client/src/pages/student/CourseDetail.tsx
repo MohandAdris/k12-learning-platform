@@ -18,6 +18,7 @@ export default function CourseDetail() {
   const [, setLocation] = useLocation();
   const courseId = parseInt(id!);
   
+  const utils = trpc.useUtils();
   const { data: courseData, isLoading } = trpc.courses.get.useQuery({ id: courseId });
   const course = courseData?.course;
   const units = courseData?.units;
@@ -27,10 +28,11 @@ export default function CourseDetail() {
   
   const enrollMutation = trpc.enrollment.enroll.useMutation({
     onSuccess: () => {
-      toast.success(t('messages.enrollSuccess'));
+      utils.enrollment.myEnrollments.invalidate();
+      toast.success(t('courses.enrollSuccess'));
     },
-    onError: () => {
-      toast.error(t('messages.enrollError'));
+    onError: (error) => {
+      toast.error(error.message || t('courses.enrollError'));
     },
   });
 
