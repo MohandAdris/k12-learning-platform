@@ -50,8 +50,8 @@
 - [ ] Implement language switcher in student portal
 
 ## Phase 5: Teacher Dashboard Frontend
-- [ ] Create teacher login page
-- [ ] Create teacher dashboard home with KPIs
+- [x] Create teacher login page
+- [x] Create teacher dashboard home with KPIs
 - [ ] Implement course management (list, create, edit, delete)
 - [ ] Create course editor with drag-drop timeline
 - [ ] Implement unit management (CRUD, reorder)
@@ -165,8 +165,8 @@
 - [x] Create simple language switcher with buttons (no dropdown)
 - [x] Build lecture page with video player
 - [x] Implement progress tracking UI
-- [ ] Create teacher dashboard home page
-- [ ] Add course creation form for teachers
+- [x] Create teacher dashboard home page
+- [x] Add course creation form for teachers
 
 
 

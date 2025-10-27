@@ -63,7 +63,7 @@ export default function TeacherHome() {
               </h1>
               <p className="text-gray-600 mt-1">{t("teacher.dashboardSubtitle")}</p>
             </div>
-            <Link href="/teacher/courses/new">
+            <Link href="/teacher/courses/create">
               <Button size="lg">
                 <BookOpen className="w-4 h-4 mr-2" />
                 {t("teacher.createCourse")}
@@ -147,7 +147,7 @@ export default function TeacherHome() {
                 <BookOpen className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">{t("teacher.noCourses")}</h3>
                 <p className="text-gray-600 mb-4">{t("teacher.createFirstCourse")}</p>
-                <Link href="/teacher/courses/new">
+                <Link href="/teacher/courses/create">
                   <Button>{t("teacher.createCourse")}</Button>
                 </Link>
               </div>

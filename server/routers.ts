@@ -212,7 +212,7 @@ export const appRouter = router({
         estimatedDuration: z.number().optional(),
       }))
       .mutation(async ({ ctx, input }) => {
-        await db.createCourse({
+        const courseId = await db.createCourse({
           ...input,
           tagsAr: input.tagsAr || [],
           tagsHe: input.tagsHe || [],
@@ -225,7 +225,7 @@ export const appRouter = router({
           entityType: 'Course',
         });
         
-        return { success: true };
+        return { success: true, id: courseId };
       }),
     
     update: teacherProcedure
