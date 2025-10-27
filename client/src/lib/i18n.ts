@@ -539,22 +539,58 @@ const resources = {
         viewDetailedAnalytics: 'عرض تحليلات مفصلة للدورات والطلاب',
         schools: 'المدارس',
         manageSchools: 'إدارة المدارس والمنظمات',
+        viewStudents: 'عرض الطلاب',
+        analyticsSubtitle: 'تتبع الأداء والمشاركة',
       },
       
-      // Students (Teacher view)
+      // Students
       students: {
         title: 'الطلاب',
-        student: 'طالب',
-        studentDetails: 'تفاصيل الطالب',
+        subtitle: 'عرض وإدارة تسجيلات الطلاب',
+        searchPlaceholder: 'البحث بالاسم أو البريد الإلكتروني...',
         totalStudents: 'إجمالي الطلاب',
-        activeStudents: 'الطلاب النشطون',
+        studentList: 'قائمة الطلاب',
+        studentListDescription: 'جميع الطلاب المسجلين في دوراتك',
+        noStudents: 'لم يتم العثور على طلاب',
+        noStudentsDescription: 'سيظهر الطلاب هنا بمجرد تسجيلهم في دوراتك',
+        name: 'الاسم',
+        email: 'البريد الإلكتروني',
+        school: 'المدرسة',
         enrollments: 'التسجيلات',
         progress: 'التقدم',
-        performance: 'الأداء',
-        noStudents: 'لم يتم العثور على طلاب',
-        searchStudents: 'البحث عن طلاب...',
+        joinedDate: 'تاريخ الانضمام',
         viewDetails: 'عرض التفاصيل',
+        noSchool: 'لا توجد مدرسة',
       },
+      
+      // Analytics
+      analytics: {
+        dateRange: 'نطاق التاريخ',
+        last7Days: 'آخر 7 أيام',
+        last30Days: 'آخر 30 يومًا',
+        last90Days: 'آخر 90 يومًا',
+        lastYear: 'العام الماضي',
+        totalCourses: 'إجمالي الدورات',
+        activeCourses: 'الدورات النشطة',
+        totalStudents: 'إجمالي الطلاب',
+        monthlyActive: 'نشط شهريًا',
+        completionRate: 'معدل الإكمال',
+        averageCompletion: 'متوسط الإنجاز',
+        avgWatchTime: 'متوسط وقت المشاهدة',
+        perStudent: 'لكل طالب',
+        engagement: 'مقاييس المشاركة',
+        engagementDescription: 'نشاط ومشاركة الطلاب',
+        dailyActiveUsers: 'المستخدمون النشطون يوميًا',
+        monthlyActiveUsers: 'المستخدمون النشطون شهريًا',
+        gamePlayRate: 'معدل لعب الألعاب',
+        yourCourses: 'دوراتك',
+        yourCoursesDescription: 'الدورات التي أنشأتها',
+        noCourses: 'لا توجد دورات بعد',
+        quickActions: 'إجراءات سريعة',
+        quickActionsDescription: 'المهام والاختصارات الشائعة',
+      },
+      
+
       
       // Schools
       schools: {
@@ -567,23 +603,6 @@ const resources = {
         region: 'المنطقة',
         contactEmail: 'البريد الإلكتروني',
         noSchools: 'لم يتم العثور على مدارس',
-      },
-      
-      // Analytics
-      analytics: {
-        title: 'التحليلات',
-        overview: 'نظرة عامة',
-        courseAnalytics: 'تحليلات الدورة',
-        studentAnalytics: 'تحليلات الطالب',
-        totalCourses: 'إجمالي الدورات',
-        totalStudents: 'إجمالي الطلاب',
-        totalEnrollments: 'إجمالي التسجيلات',
-        completionRate: 'معدل الإكمال',
-        averageWatchTime: 'متوسط وقت المشاهدة',
-        dailyActiveUsers: 'المستخدمون النشطون يومياً',
-        monthlyActiveUsers: 'المستخدمون النشطون شهرياً',
-        popularCourses: 'الدورات الشائعة',
-        recentActivity: 'النشاط الأخير',
       },
       
       // Profile
@@ -851,22 +870,58 @@ const resources = {
         viewDetailedAnalytics: 'צפה באנליטיקה מפורטת של קורסים ותלמידים',
         schools: 'בתי ספר',
         manageSchools: 'נהל בתי ספר וארגונים',
+        viewStudents: 'צפה בתלמידים',
+        analyticsSubtitle: 'עקוב אחר ביצועים ומשאבים',
       },
       
-      // Students (Teacher view)
+      // Students
       students: {
         title: 'תלמידים',
-        student: 'תלמיד',
-        studentDetails: 'פרטי תלמיד',
-        totalStudents: 'סך תלמידים',
-        activeStudents: 'תלמידים פעילים',
-        enrollments: 'רישומים',
-        progress: 'התקדמות',
-        performance: 'ביצועים',
+        subtitle: 'צפה ונהל הרשמות תלמידים',
+        searchPlaceholder: 'חפש לפי שם או אימייל...',
+        totalStudents: 'סך הכל תלמידים',
+        studentList: 'רשימת תלמידים',
+        studentListDescription: 'כל התלמידים הרשומים לקורסים שלך',
         noStudents: 'לא נמצאו תלמידים',
-        searchStudents: 'חפש תלמידים...',
+        noStudentsDescription: 'תלמידים יופיעו כאן לאחר שירשמו לקורסים שלך',
+        name: 'שם',
+        email: 'אימייל',
+        school: 'בית ספר',
+        enrollments: 'הרשמות',
+        progress: 'התקדמות',
+        joinedDate: 'תאריך הצטרפות',
         viewDetails: 'צפה בפרטים',
+        noSchool: 'אין בית ספר',
       },
+      
+      // Analytics
+      analytics: {
+        dateRange: 'טווח תאריכים',
+        last7Days: '7 הימים האחרונים',
+        last30Days: '30 הימים האחרונים',
+        last90Days: '90 הימים האחרונים',
+        lastYear: 'השנה שעברה',
+        totalCourses: 'סך הכל קורסים',
+        activeCourses: 'קורסים פעילים',
+        totalStudents: 'סך הכל תלמידים',
+        monthlyActive: 'פעילים חודשיים',
+        completionRate: 'שיעור השלמה',
+        averageCompletion: 'השלמה ממוצעת',
+        avgWatchTime: 'זמן צפייה ממוצע',
+        perStudent: 'לתלמיד',
+        engagement: 'מדדי משאבים',
+        engagementDescription: 'פעילות ומשאבים של תלמידים',
+        dailyActiveUsers: 'משתמשים פעילים יומיים',
+        monthlyActiveUsers: 'משתמשים פעילים חודשיים',
+        gamePlayRate: 'שיעור משחקים',
+        yourCourses: 'הקורסים שלך',
+        yourCoursesDescription: 'קורסים שיצרת',
+        noCourses: 'אין קורסים עדיין',
+        quickActions: 'פעולות מהירות',
+        quickActionsDescription: 'משימות וקיצורי דרך נפוצים',
+      },
+      
+
       
       // Schools
       schools: {
@@ -879,23 +934,6 @@ const resources = {
         region: 'אזור',
         contactEmail: 'דוא"ל ליצירת קשר',
         noSchools: 'לא נמצאו בתי ספר',
-      },
-      
-      // Analytics
-      analytics: {
-        title: 'אנליטיקה',
-        overview: 'סקירה כללית',
-        courseAnalytics: 'אנליטיקת קורס',
-        studentAnalytics: 'אנליטיקת תלמיד',
-        totalCourses: 'סך קורסים',
-        totalStudents: 'סך תלמידים',
-        totalEnrollments: 'סך רישומים',
-        completionRate: 'שיעור השלמה',
-        averageWatchTime: 'זמן צפייה ממוצע',
-        dailyActiveUsers: 'משתמשים פעילים יומיים',
-        monthlyActiveUsers: 'משתמשים פעילים חודשיים',
-        popularCourses: 'קורסים פופולריים',
-        recentActivity: 'פעילות אחרונה',
       },
       
       // Profile
