@@ -35,7 +35,9 @@ const resources = {
         inactive: 'Inactive',
         minutes: 'minutes',
         viewCourse: 'View Course',
-        complete: 'Complete',
+        continue: 'Continue',
+        deleteCourse: 'Delete Course',
+        deleteConfirmation: 'Are you sure you want to delete this course? This action cannot be undone and will remove all units, lectures, and student progress.',
       },
       
       // Navigation
@@ -341,7 +343,9 @@ const resources = {
         inactive: 'غير نشط',
         minutes: 'دقيقة',
         viewCourse: 'عرض الدورة',
-        complete: 'مكتمل',
+        continue: 'متابعة',
+        deleteCourse: 'حذف الدورة',
+        deleteConfirmation: 'هل أنت متأكد من حذف هذه الدورة؟ لا يمكن التراجع عن هذا الإجراء وسيتم حذف جميع الوحدات والمحاضرات وتقدم الطلاب.',
       },
       
       // Navigation
@@ -633,8 +637,10 @@ const resources = {
         active: 'פעיל',
         inactive: 'לא פעיל',
         minutes: 'דקות',
-        viewCourse: 'צפה בקורס',
-        complete: 'מושלם',
+        viewCourse: 'הצג קורס',
+        continue: 'המשך',
+        deleteCourse: 'מחק קורס',
+        deleteConfirmation: 'האם אתה בטוח שברצונך למחוק קורס זה? פעולה זו אינה ניתנת לביטול ותסיר את כל היחידות, השיעורים והתקדמות התלמידים.',
       },
       
       // Navigation

@@ -6,6 +6,17 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { trpc } from "@/lib/trpc";
 import { ArrowLeft, Save, Trash2 } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation, useRoute } from "wouter";
@@ -93,9 +104,7 @@ export default function CourseEdit() {
   };
 
   const handleDelete = () => {
-    if (confirm(t("messages.confirmDelete"))) {
-      deleteCourseMutation.mutate({ id: courseId });
-    }
+    deleteCourseMutation.mutate({ id: courseId });
   };
 
   const handleChange = (field: string, value: string | number) => {
@@ -152,14 +161,34 @@ export default function CourseEdit() {
                     {t("units.manageUnits")}
                   </Button>
                 </Link>
-                <Button
-                  variant="destructive"
-                  onClick={handleDelete}
-                  disabled={deleteCourseMutation.isPending}
-                >
-                  <Trash2 className="w-4 h-4 mr-2" />
-                  {t("common.delete")}
-                </Button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button
+                      variant="destructive"
+                      disabled={deleteCourseMutation.isPending}
+                    >
+                      <Trash2 className="w-4 h-4 mr-2" />
+                      {t("common.delete")}
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>{t("courses.deleteCourse")}</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        {t("courses.deleteConfirmation")}
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>{t("common.cancel")}</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={handleDelete}
+                        className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                      >
+                        {t("common.delete")}
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </div>
           </div>
         </div>
