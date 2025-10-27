@@ -224,6 +224,12 @@
 ## Course Deletion Feature
 - [x] Add delete confirmation dialog to course edit page
 - [x] Implement delete mutation with proper error handling
-- [ ] Test course deletion functionality
+- [x] Test course deletion functionality
 - [x] Ensure cascade deletion of related data (units, lectures, enrollments)
+
+
+
+
+## Known Issues
+- [ ] Delete confirmation dialog shows translation key instead of actual translated text
 
