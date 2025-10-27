@@ -211,3 +211,10 @@
 - [x] Add certificate design with course details and student name
 - [ ] Implement certificate verification system
 
+
+
+
+## Navigation Fixes
+- [x] Add profile link to student portal header
+- [x] Add "My Progress" link to student navigation
+

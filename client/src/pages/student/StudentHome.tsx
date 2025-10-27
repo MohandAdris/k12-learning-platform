@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
-import { BookOpen, Clock, Search, GraduationCap } from "lucide-react";
+import { BookOpen, Clock, Search, GraduationCap, User } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { toast } from "sonner";
 
@@ -101,6 +101,12 @@ export default function StudentHome() {
             </div>
             <div className="flex items-center gap-2">
               <LanguageSwitcher />
+              <Link href="/student/profile">
+                <Button variant="outline">
+                  <User className="mr-2 h-4 w-4" />
+                  {t('profile.myProfile')}
+                </Button>
+              </Link>
               <Link href="/student/progress">
                 <Button variant="outline">
                   <GraduationCap className="mr-2 h-4 w-4" />
