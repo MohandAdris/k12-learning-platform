@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1761559292286,
+      "tag": "0000_aromatic_blue_marvel",
+      "breakpoints": true
+    }
+  ]
 }

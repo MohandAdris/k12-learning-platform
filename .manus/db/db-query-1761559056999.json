@@ -1,0 +1,9 @@
+{
+  "query": "\nDROP TABLE IF EXISTS translation_cache;\nDROP TABLE IF EXISTS system_config;\nDROP TABLE IF EXISTS analytics_events;\nDROP TABLE IF EXISTS audit_logs;\nDROP TABLE IF EXISTS game_sessions;\nDROP TABLE IF EXISTS progress;\nDROP TABLE IF EXISTS enrollments;\nDROP TABLE IF EXISTS unit_games;\nDROP TABLE IF EXISTS interactive_games;\nDROP TABLE IF EXISTS attachments;\nDROP TABLE IF EXISTS lectures;\nDROP TABLE IF EXISTS units;\nDROP TABLE IF EXISTS courses;\nDROP TABLE IF EXISTS schools;\nDROP TABLE IF EXISTS refresh_tokens;\nDROP TABLE IF EXISTS users;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 34NvQRuQy4SJzyX.root --database icauamhghDXp9LtSQ2wr2B --execute \nDROP TABLE IF EXISTS translation_cache;\nDROP TABLE IF EXISTS system_config;\nDROP TABLE IF EXISTS analytics_events;\nDROP TABLE IF EXISTS audit_logs;\nDROP TABLE IF EXISTS game_sessions;\nDROP TABLE IF EXISTS progress;\nDROP TABLE IF EXISTS enrollments;\nDROP TABLE IF EXISTS unit_games;\nDROP TABLE IF EXISTS interactive_games;\nDROP TABLE IF EXISTS attachments;\nDROP TABLE IF EXISTS lectures;\nDROP TABLE IF EXISTS units;\nDROP TABLE IF EXISTS courses;\nDROP TABLE IF EXISTS schools;\nDROP TABLE IF EXISTS refresh_tokens;\nDROP TABLE IF EXISTS users;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 94
+}
