@@ -8,6 +8,7 @@ import { trpc } from "@/lib/trpc";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { BookOpen, Clock, Search, GraduationCap } from "lucide-react";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function StudentHome() {
   const { t } = useTranslation();
@@ -56,12 +57,15 @@ export default function StudentHome() {
                 {t('courses.searchCourses')}
               </p>
             </div>
-            <Link href="/student/progress">
-              <Button variant="outline">
-                <GraduationCap className="mr-2 h-4 w-4" />
-                {t('progress.title')}
-              </Button>
-            </Link>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <Link href="/student/progress">
+                <Button variant="outline">
+                  <GraduationCap className="mr-2 h-4 w-4" />
+                  {t('progress.title')}
+                </Button>
+              </Link>
+            </div>
           </div>
           
           {/* Search Bar */}

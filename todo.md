@@ -1,5 +1,11 @@
 # K-12 Learning Platform - Project TODO
 
+## Bug Fixes (Priority)
+- [ ] Fix language switcher dropdown not appearing (needs alternative approach)
+- [x] Fix unit accordion not expanding to show lectures
+- [x] Update courses.get procedure to include lectures with units
+- [ ] Test enrollment flow functionality
+
 ## Phase 1: Database Schema & Backend Setup
 - [x] Update Drizzle schema with multilingual support (English, Arabic, Hebrew)
 - [x] Add User, School, Course, Unit, Lecture, Attachment tables

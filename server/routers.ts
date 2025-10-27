@@ -161,7 +161,15 @@ export const appRouter = router({
         
         const units = await db.getUnitsByCourseId(input.id);
         
-        return { course, units };
+        // Fetch lectures for each unit
+        const unitsWithLectures = await Promise.all(
+          units.map(async (unit) => {
+            const lectures = await db.getLecturesByUnitId(unit.id);
+            return { ...unit, lectures };
+          })
+        );
+        
+        return { course, units: unitsWithLectures };
       }),
     
     preview: protectedProcedure
