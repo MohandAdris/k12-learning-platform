@@ -135,6 +135,27 @@ export const appRouter = router({
   // ============================================
 
   users: router({
+    list: teacherProcedure
+      .input(z.object({
+        role: z.enum(['STUDENT', 'TEACHER', 'ADMIN']).optional(),
+        schoolId: z.number().optional(),
+        limit: z.number().optional(),
+        offset: z.number().optional(),
+        search: z.string().optional(),
+      }))
+      .query(async ({ input }) => {
+        // For now, only support listing students
+        if (input.role === 'STUDENT' || !input.role) {
+          return await db.getStudents({
+            schoolId: input.schoolId,
+            search: input.search,
+            limit: input.limit,
+            offset: input.offset,
+          });
+        }
+        return [];
+      }),
+    
     updateProfile: protectedProcedure
       .input(z.object({
         firstName: z.string().optional(),

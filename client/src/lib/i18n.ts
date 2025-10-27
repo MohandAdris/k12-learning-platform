@@ -177,13 +177,58 @@ const resources = {
         continueWhere: 'Continue where you left off',
       },
       
+      // Students
+      students: {
+        title: 'Students',
+        subtitle: 'View and manage student enrollments',
+        searchPlaceholder: 'Search by name or email...',
+        totalStudents: 'Total Students',
+        studentList: 'Student List',
+        studentListDescription: 'All students enrolled in your courses',
+        noStudents: 'No students found',
+        noStudentsDescription: 'Students will appear here once they enroll in your courses',
+        name: 'Name',
+        email: 'Email',
+        school: 'School',
+        enrollments: 'Enrollments',
+        progress: 'Progress',
+        joinedDate: 'Joined',
+        viewDetails: 'View Details',
+        noSchool: 'No School',
+      },
+      
+      // Analytics
+      analytics: {
+        dateRange: 'Date Range',
+        last7Days: 'Last 7 Days',
+        last30Days: 'Last 30 Days',
+        last90Days: 'Last 90 Days',
+        lastYear: 'Last Year',
+        totalCourses: 'Total Courses',
+        activeCourses: 'Active courses',
+        totalStudents: 'Total Students',
+        monthlyActive: 'monthly active',
+        completionRate: 'Completion Rate',
+        averageCompletion: 'Average completion',
+        avgWatchTime: 'Avg. Watch Time',
+        perStudent: 'per student',
+        engagement: 'Engagement Metrics',
+        engagementDescription: 'Student activity and participation',
+        dailyActiveUsers: 'Daily Active Users',
+        monthlyActiveUsers: 'Monthly Active Users',
+        gamePlayRate: 'Game Play Rate',
+        yourCourses: 'Your Courses',
+        yourCoursesDescription: 'Courses you have created',
+        noCourses: 'No courses yet',
+        quickActions: 'Quick Actions',
+        quickActionsDescription: 'Common tasks and shortcuts',
+      },
+      
       // Teacher Dashboard
       teacher: {
         welcome: 'Welcome',
         dashboardSubtitle: 'Manage your courses and track student progress',
-        totalCourses: 'Total Courses',
         coursesDescription: 'Courses you have created',
-        totalStudents: 'Total Students',
         studentsDescription: 'Students enrolled in your courses',
         activeEnrollments: 'Active Enrollments',
         enrollmentsDescription: 'Currently active course enrollments',
@@ -191,12 +236,13 @@ const resources = {
         completionDescription: 'Average course completion rate',
         myCourses: 'My Courses',
         manageYourCourses: 'Create and manage your courses',
-        noCourses: 'No courses yet',
         createFirstCourse: 'Create your first course to get started',
         createCourse: 'Create Course',
         manageStudents: 'Manage Students',
         viewAndManageStudents: 'View and manage student enrollments',
+        viewStudents: 'View Students',
         analytics: 'Analytics',
+        analyticsSubtitle: 'Track performance and engagement',
         viewDetailedAnalytics: 'View detailed course and student analytics',
         schools: 'Schools',
         manageSchools: 'Manage schools and organizations',
@@ -231,21 +277,6 @@ const resources = {
         updated: "Profile updated successfully",
       },
       
-      // Students (Teacher view)
-      students: {
-        title: 'Students',
-        student: 'Student',
-        studentDetails: 'Student Details',
-        totalStudents: 'Total Students',
-        activeStudents: 'Active Students',
-        enrollments: 'Enrollments',
-        progress: 'Progress',
-        performance: 'Performance',
-        noStudents: 'No students found',
-        searchStudents: 'Search students...',
-        viewDetails: 'View Details',
-      },
-      
       // Schools
       schools: {
         title: 'Schools',
@@ -257,23 +288,6 @@ const resources = {
         region: 'Region',
         contactEmail: 'Contact Email',
         noSchools: 'No schools found',
-      },
-      
-      // Analytics
-      analytics: {
-        title: 'Analytics',
-        overview: 'Overview',
-        courseAnalytics: 'Course Analytics',
-        studentAnalytics: 'Student Analytics',
-        totalCourses: 'Total Courses',
-        totalStudents: 'Total Students',
-        totalEnrollments: 'Total Enrollments',
-        completionRate: 'Completion Rate',
-        averageWatchTime: 'Average Watch Time',
-        dailyActiveUsers: 'Daily Active Users',
-        monthlyActiveUsers: 'Monthly Active Users',
-        popularCourses: 'Popular Courses',
-        recentActivity: 'Recent Activity',
       },
       
       // Profile (merged - removed duplicate)

@@ -11,6 +11,8 @@ import CourseEdit from "./pages/teacher/CourseEdit";
 import CourseUnits from "./pages/teacher/CourseUnits";
 import UnitLectures from "./pages/teacher/UnitLectures";
 import LectureForm from "./pages/teacher/LectureForm";
+import Analytics from "./pages/teacher/Analytics";
+import Students from "./pages/teacher/Students";
 import LecturePage from "./pages/student/LecturePage";
 import StudentHome from "./pages/student/StudentHome";
 import CourseDetail from "./pages/student/CourseDetail";
@@ -28,6 +30,8 @@ function Router() {
       <Route path={"/teacher/units/:unitId/lectures"} component={UnitLectures} />
       <Route path={"/teacher/units/:unitId/lectures/create"} component={LectureForm} />
       <Route path={"/teacher/lectures/:lectureId/edit"} component={LectureForm} />
+      <Route path={"/teacher/analytics"} component={Analytics} />
+      <Route path={"/teacher/students"} component={Students} />
       <Route path={"/student"} component={StudentHome} />
       <Route path={"/student/course/:id"} component={CourseDetail} />
       <Route path={"/student/lecture/:id"} component={LecturePage} />
