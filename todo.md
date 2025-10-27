@@ -21,19 +21,18 @@
 - [x] Add role-based access control (RBAC) middleware
 - [ ] Add rate limiting and security measures
 
-## Phase 3: i18n Infrastructure
-- [ ] Install and configure next-i18next or similar i18n library
-- [ ] Create translation files for English, Arabic, Hebrew
-- [ ] Implement RTL support for Arabic and Hebrew
-- [ ] Add language switcher component
-- [ ] Configure font loading for Arabic and Hebrew scripts
-- [ ] Add direction detection and CSS adjustments
+### Phase 3: i18n Infrastructure
+- [x] Install and configure next-i18next or similar i18n library
+- [x] Create translation files for English, Arabic, Hebrew
+- [x] Add RTL support for Arabic and Hebrew
+- [x] Configure font loading for Arabic and Hebrew scripts
+- [ ] Test language switching functionality- [ ] Add direction detection and CSS adjustments
 
 ## Phase 4: Student Portal Frontend
-- [ ] Create student login page
-- [ ] Create course catalog with grid layout
+- [x] Create student login page
+- [x] Create course catalog with grid layout
 - [ ] Implement hover preview tooltip for courses
-- [ ] Create course overview page
+- [x] Create course overview page
 - [ ] Create unit detail page with video player
 - [ ] Implement lecture timeline sidebar
 - [ ] Add video player with HLS support and captions

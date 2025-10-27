@@ -1,0 +1,799 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+// Translation resources
+const resources = {
+  en: {
+    translation: {
+      // Common
+      common: {
+        loading: 'Loading...',
+        save: 'Save',
+        cancel: 'Cancel',
+        delete: 'Delete',
+        edit: 'Edit',
+        create: 'Create',
+        search: 'Search',
+        filter: 'Filter',
+        back: 'Back',
+        next: 'Next',
+        previous: 'Previous',
+        submit: 'Submit',
+        close: 'Close',
+        confirm: 'Confirm',
+        yes: 'Yes',
+        no: 'No',
+        error: 'Error',
+        success: 'Success',
+        warning: 'Warning',
+        info: 'Information',
+      },
+      
+      // Navigation
+      nav: {
+        home: 'Home',
+        courses: 'Courses',
+        myCourses: 'My Courses',
+        progress: 'Progress',
+        games: 'Games',
+        profile: 'Profile',
+        settings: 'Settings',
+        logout: 'Logout',
+        dashboard: 'Dashboard',
+        students: 'Students',
+        analytics: 'Analytics',
+        schools: 'Schools',
+      },
+      
+      // Authentication
+      auth: {
+        login: 'Login',
+        logout: 'Logout',
+        welcome: 'Welcome',
+        loginPrompt: 'Please login to continue',
+        loginButton: 'Login with Manus',
+      },
+      
+      // Courses
+      courses: {
+        title: 'Courses',
+        myCourses: 'My Courses',
+        allCourses: 'All Courses',
+        enrolledCourses: 'Enrolled Courses',
+        courseDetails: 'Course Details',
+        enroll: 'Enroll',
+        enrolled: 'Enrolled',
+        completed: 'Completed',
+        inProgress: 'In Progress',
+        notStarted: 'Not Started',
+        units: 'Units',
+        lectures: 'Lectures',
+        duration: 'Duration',
+        estimatedDuration: 'Estimated Duration',
+        prerequisites: 'Prerequisites',
+        learningOutcomes: 'Learning Outcomes',
+        description: 'Description',
+        tags: 'Tags',
+        visibility: 'Visibility',
+        public: 'Public',
+        private: 'Private',
+        createCourse: 'Create Course',
+        editCourse: 'Edit Course',
+        deleteCourse: 'Delete Course',
+        publishCourse: 'Publish Course',
+        unpublishCourse: 'Unpublish Course',
+        noCourses: 'No courses available',
+        searchCourses: 'Search courses...',
+      },
+      
+      // Units & Lectures
+      units: {
+        title: 'Units',
+        unit: 'Unit',
+        createUnit: 'Create Unit',
+        editUnit: 'Edit Unit',
+        deleteUnit: 'Delete Unit',
+        noUnits: 'No units available',
+      },
+      
+      lectures: {
+        title: 'Lectures',
+        lecture: 'Lecture',
+        watchLecture: 'Watch Lecture',
+        createLecture: 'Create Lecture',
+        editLecture: 'Edit Lecture',
+        deleteLecture: 'Delete Lecture',
+        noLectures: 'No lectures available',
+        videoUrl: 'Video URL',
+        captions: 'Captions',
+        summary: 'Summary',
+        attachments: 'Attachments',
+        references: 'References',
+        markComplete: 'Mark as Complete',
+        completed: 'Completed',
+        resume: 'Resume',
+        startWatching: 'Start Watching',
+      },
+      
+      // Games
+      games: {
+        title: 'Interactive Games',
+        game: 'Game',
+        playGame: 'Play Game',
+        createGame: 'Create Game',
+        editGame: 'Edit Game',
+        deleteGame: 'Delete Game',
+        noGames: 'No games available',
+        score: 'Score',
+        highScore: 'High Score',
+        attempts: 'Attempts',
+        completed: 'Completed',
+        inProgress: 'In Progress',
+        notStarted: 'Not Started',
+        startGame: 'Start Game',
+        continueGame: 'Continue Game',
+        gameType: 'Game Type',
+        required: 'Required',
+        optional: 'Optional',
+      },
+      
+      // Progress
+      progress: {
+        title: 'My Progress',
+        overall: 'Overall Progress',
+        courseProgress: 'Course Progress',
+        lecturesCompleted: 'Lectures Completed',
+        gamesCompleted: 'Games Completed',
+        totalWatchTime: 'Total Watch Time',
+        averageScore: 'Average Score',
+        lastActivity: 'Last Activity',
+        noProgress: 'No progress yet',
+        continueWhere: 'Continue where you left off',
+      },
+      
+      // Students (Teacher view)
+      students: {
+        title: 'Students',
+        student: 'Student',
+        studentDetails: 'Student Details',
+        totalStudents: 'Total Students',
+        activeStudents: 'Active Students',
+        enrollments: 'Enrollments',
+        progress: 'Progress',
+        performance: 'Performance',
+        noStudents: 'No students found',
+        searchStudents: 'Search students...',
+        viewDetails: 'View Details',
+      },
+      
+      // Schools
+      schools: {
+        title: 'Schools',
+        school: 'School',
+        createSchool: 'Create School',
+        editSchool: 'Edit School',
+        deleteSchool: 'Delete School',
+        schoolName: 'School Name',
+        region: 'Region',
+        contactEmail: 'Contact Email',
+        noSchools: 'No schools found',
+      },
+      
+      // Analytics
+      analytics: {
+        title: 'Analytics',
+        overview: 'Overview',
+        courseAnalytics: 'Course Analytics',
+        studentAnalytics: 'Student Analytics',
+        totalCourses: 'Total Courses',
+        totalStudents: 'Total Students',
+        totalEnrollments: 'Total Enrollments',
+        completionRate: 'Completion Rate',
+        averageWatchTime: 'Average Watch Time',
+        dailyActiveUsers: 'Daily Active Users',
+        monthlyActiveUsers: 'Monthly Active Users',
+        popularCourses: 'Popular Courses',
+        recentActivity: 'Recent Activity',
+      },
+      
+      // Profile
+      profile: {
+        title: 'Profile',
+        myProfile: 'My Profile',
+        editProfile: 'Edit Profile',
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email',
+        language: 'Language',
+        preferredLanguage: 'Preferred Language',
+        school: 'School',
+        role: 'Role',
+        student: 'Student',
+        teacher: 'Teacher',
+        admin: 'Administrator',
+        joinedDate: 'Joined Date',
+        lastLogin: 'Last Login',
+      },
+      
+      // Settings
+      settings: {
+        title: 'Settings',
+        general: 'General',
+        language: 'Language',
+        notifications: 'Notifications',
+        privacy: 'Privacy',
+        changeLanguage: 'Change Language',
+        selectLanguage: 'Select Language',
+      },
+      
+      // Languages
+      languages: {
+        en: 'English',
+        ar: 'العربية',
+        he: 'עברית',
+      },
+      
+      // Messages
+      messages: {
+        enrollSuccess: 'Successfully enrolled in course',
+        enrollError: 'Failed to enroll in course',
+        progressSaved: 'Progress saved',
+        progressError: 'Failed to save progress',
+        courseCreated: 'Course created successfully',
+        courseUpdated: 'Course updated successfully',
+        courseDeleted: 'Course deleted successfully',
+        confirmDelete: 'Are you sure you want to delete this item?',
+        noPermission: 'You do not have permission to perform this action',
+        networkError: 'Network error. Please try again.',
+        sessionExpired: 'Your session has expired. Please login again.',
+      },
+      
+      // Errors
+      errors: {
+        required: 'This field is required',
+        invalidEmail: 'Invalid email address',
+        invalidUrl: 'Invalid URL',
+        minLength: 'Minimum length is {{min}} characters',
+        maxLength: 'Maximum length is {{max}} characters',
+        notFound: 'Item not found',
+        serverError: 'Server error. Please try again later.',
+      },
+    },
+  },
+  
+  ar: {
+    translation: {
+      // Common
+      common: {
+        loading: 'جاري التحميل...',
+        save: 'حفظ',
+        cancel: 'إلغاء',
+        delete: 'حذف',
+        edit: 'تعديل',
+        create: 'إنشاء',
+        search: 'بحث',
+        filter: 'تصفية',
+        back: 'رجوع',
+        next: 'التالي',
+        previous: 'السابق',
+        submit: 'إرسال',
+        close: 'إغلاق',
+        confirm: 'تأكيد',
+        yes: 'نعم',
+        no: 'لا',
+        error: 'خطأ',
+        success: 'نجح',
+        warning: 'تحذير',
+        info: 'معلومات',
+      },
+      
+      // Navigation
+      nav: {
+        home: 'الرئيسية',
+        courses: 'الدورات',
+        myCourses: 'دوراتي',
+        progress: 'التقدم',
+        games: 'الألعاب',
+        profile: 'الملف الشخصي',
+        settings: 'الإعدادات',
+        logout: 'تسجيل الخروج',
+        dashboard: 'لوحة التحكم',
+        students: 'الطلاب',
+        analytics: 'التحليلات',
+        schools: 'المدارس',
+      },
+      
+      // Authentication
+      auth: {
+        login: 'تسجيل الدخول',
+        logout: 'تسجيل الخروج',
+        welcome: 'مرحباً',
+        loginPrompt: 'الرجاء تسجيل الدخول للمتابعة',
+        loginButton: 'تسجيل الدخول باستخدام Manus',
+      },
+      
+      // Courses
+      courses: {
+        title: 'الدورات',
+        myCourses: 'دوراتي',
+        allCourses: 'جميع الدورات',
+        enrolledCourses: 'الدورات المسجلة',
+        courseDetails: 'تفاصيل الدورة',
+        enroll: 'التسجيل',
+        enrolled: 'مسجل',
+        completed: 'مكتمل',
+        inProgress: 'قيد التقدم',
+        notStarted: 'لم يبدأ',
+        units: 'الوحدات',
+        lectures: 'المحاضرات',
+        duration: 'المدة',
+        estimatedDuration: 'المدة المقدرة',
+        prerequisites: 'المتطلبات الأساسية',
+        learningOutcomes: 'نتائج التعلم',
+        description: 'الوصف',
+        tags: 'العلامات',
+        visibility: 'الظهور',
+        public: 'عام',
+        private: 'خاص',
+        createCourse: 'إنشاء دورة',
+        editCourse: 'تعديل الدورة',
+        deleteCourse: 'حذف الدورة',
+        publishCourse: 'نشر الدورة',
+        unpublishCourse: 'إلغاء نشر الدورة',
+        noCourses: 'لا توجد دورات متاحة',
+        searchCourses: 'البحث عن دورات...',
+      },
+      
+      // Units & Lectures
+      units: {
+        title: 'الوحدات',
+        unit: 'وحدة',
+        createUnit: 'إنشاء وحدة',
+        editUnit: 'تعديل الوحدة',
+        deleteUnit: 'حذف الوحدة',
+        noUnits: 'لا توجد وحدات متاحة',
+      },
+      
+      lectures: {
+        title: 'المحاضرات',
+        lecture: 'محاضرة',
+        watchLecture: 'مشاهدة المحاضرة',
+        createLecture: 'إنشاء محاضرة',
+        editLecture: 'تعديل المحاضرة',
+        deleteLecture: 'حذف المحاضرة',
+        noLectures: 'لا توجد محاضرات متاحة',
+        videoUrl: 'رابط الفيديو',
+        captions: 'الترجمة',
+        summary: 'الملخص',
+        attachments: 'المرفقات',
+        references: 'المراجع',
+        markComplete: 'وضع علامة كمكتمل',
+        completed: 'مكتمل',
+        resume: 'استئناف',
+        startWatching: 'بدء المشاهدة',
+      },
+      
+      // Games
+      games: {
+        title: 'الألعاب التفاعلية',
+        game: 'لعبة',
+        playGame: 'لعب اللعبة',
+        createGame: 'إنشاء لعبة',
+        editGame: 'تعديل اللعبة',
+        deleteGame: 'حذف اللعبة',
+        noGames: 'لا توجد ألعاب متاحة',
+        score: 'النقاط',
+        highScore: 'أعلى نقاط',
+        attempts: 'المحاولات',
+        completed: 'مكتمل',
+        inProgress: 'قيد التقدم',
+        notStarted: 'لم يبدأ',
+        startGame: 'بدء اللعبة',
+        continueGame: 'متابعة اللعبة',
+        gameType: 'نوع اللعبة',
+        required: 'مطلوب',
+        optional: 'اختياري',
+      },
+      
+      // Progress
+      progress: {
+        title: 'تقدمي',
+        overall: 'التقدم الإجمالي',
+        courseProgress: 'تقدم الدورة',
+        lecturesCompleted: 'المحاضرات المكتملة',
+        gamesCompleted: 'الألعاب المكتملة',
+        totalWatchTime: 'إجمالي وقت المشاهدة',
+        averageScore: 'متوسط النقاط',
+        lastActivity: 'آخر نشاط',
+        noProgress: 'لا يوجد تقدم بعد',
+        continueWhere: 'تابع من حيث توقفت',
+      },
+      
+      // Students (Teacher view)
+      students: {
+        title: 'الطلاب',
+        student: 'طالب',
+        studentDetails: 'تفاصيل الطالب',
+        totalStudents: 'إجمالي الطلاب',
+        activeStudents: 'الطلاب النشطون',
+        enrollments: 'التسجيلات',
+        progress: 'التقدم',
+        performance: 'الأداء',
+        noStudents: 'لم يتم العثور على طلاب',
+        searchStudents: 'البحث عن طلاب...',
+        viewDetails: 'عرض التفاصيل',
+      },
+      
+      // Schools
+      schools: {
+        title: 'المدارس',
+        school: 'مدرسة',
+        createSchool: 'إنشاء مدرسة',
+        editSchool: 'تعديل المدرسة',
+        deleteSchool: 'حذف المدرسة',
+        schoolName: 'اسم المدرسة',
+        region: 'المنطقة',
+        contactEmail: 'البريد الإلكتروني',
+        noSchools: 'لم يتم العثور على مدارس',
+      },
+      
+      // Analytics
+      analytics: {
+        title: 'التحليلات',
+        overview: 'نظرة عامة',
+        courseAnalytics: 'تحليلات الدورة',
+        studentAnalytics: 'تحليلات الطالب',
+        totalCourses: 'إجمالي الدورات',
+        totalStudents: 'إجمالي الطلاب',
+        totalEnrollments: 'إجمالي التسجيلات',
+        completionRate: 'معدل الإكمال',
+        averageWatchTime: 'متوسط وقت المشاهدة',
+        dailyActiveUsers: 'المستخدمون النشطون يومياً',
+        monthlyActiveUsers: 'المستخدمون النشطون شهرياً',
+        popularCourses: 'الدورات الشائعة',
+        recentActivity: 'النشاط الأخير',
+      },
+      
+      // Profile
+      profile: {
+        title: 'الملف الشخصي',
+        myProfile: 'ملفي الشخصي',
+        editProfile: 'تعديل الملف الشخصي',
+        firstName: 'الاسم الأول',
+        lastName: 'اسم العائلة',
+        email: 'البريد الإلكتروني',
+        language: 'اللغة',
+        preferredLanguage: 'اللغة المفضلة',
+        school: 'المدرسة',
+        role: 'الدور',
+        student: 'طالب',
+        teacher: 'معلم',
+        admin: 'مسؤول',
+        joinedDate: 'تاريخ الانضمام',
+        lastLogin: 'آخر تسجيل دخول',
+      },
+      
+      // Settings
+      settings: {
+        title: 'الإعدادات',
+        general: 'عام',
+        language: 'اللغة',
+        notifications: 'الإشعارات',
+        privacy: 'الخصوصية',
+        changeLanguage: 'تغيير اللغة',
+        selectLanguage: 'اختر اللغة',
+      },
+      
+      // Languages
+      languages: {
+        en: 'English',
+        ar: 'العربية',
+        he: 'עברית',
+      },
+      
+      // Messages
+      messages: {
+        enrollSuccess: 'تم التسجيل في الدورة بنجاح',
+        enrollError: 'فشل التسجيل في الدورة',
+        progressSaved: 'تم حفظ التقدم',
+        progressError: 'فشل حفظ التقدم',
+        courseCreated: 'تم إنشاء الدورة بنجاح',
+        courseUpdated: 'تم تحديث الدورة بنجاح',
+        courseDeleted: 'تم حذف الدورة بنجاح',
+        confirmDelete: 'هل أنت متأكد من حذف هذا العنصر؟',
+        noPermission: 'ليس لديك إذن لتنفيذ هذا الإجراء',
+        networkError: 'خطأ في الشبكة. يرجى المحاولة مرة أخرى.',
+        sessionExpired: 'انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى.',
+      },
+      
+      // Errors
+      errors: {
+        required: 'هذا الحقل مطلوب',
+        invalidEmail: 'عنوان بريد إلكتروني غير صالح',
+        invalidUrl: 'عنوان URL غير صالح',
+        minLength: 'الحد الأدنى للطول هو {{min}} حرفاً',
+        maxLength: 'الحد الأقصى للطول هو {{max}} حرفاً',
+        notFound: 'العنصر غير موجود',
+        serverError: 'خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقاً.',
+      },
+    },
+  },
+  
+  he: {
+    translation: {
+      // Common
+      common: {
+        loading: 'טוען...',
+        save: 'שמור',
+        cancel: 'ביטול',
+        delete: 'מחק',
+        edit: 'ערוך',
+        create: 'צור',
+        search: 'חפש',
+        filter: 'סנן',
+        back: 'חזור',
+        next: 'הבא',
+        previous: 'הקודם',
+        submit: 'שלח',
+        close: 'סגור',
+        confirm: 'אשר',
+        yes: 'כן',
+        no: 'לא',
+        error: 'שגיאה',
+        success: 'הצלחה',
+        warning: 'אזהרה',
+        info: 'מידע',
+      },
+      
+      // Navigation
+      nav: {
+        home: 'בית',
+        courses: 'קורסים',
+        myCourses: 'הקורסים שלי',
+        progress: 'התקדמות',
+        games: 'משחקים',
+        profile: 'פרופיל',
+        settings: 'הגדרות',
+        logout: 'התנתק',
+        dashboard: 'לוח בקרה',
+        students: 'תלמידים',
+        analytics: 'אנליטיקה',
+        schools: 'בתי ספר',
+      },
+      
+      // Authentication
+      auth: {
+        login: 'התחבר',
+        logout: 'התנתק',
+        welcome: 'ברוך הבא',
+        loginPrompt: 'אנא התחבר כדי להמשיך',
+        loginButton: 'התחבר עם Manus',
+      },
+      
+      // Courses
+      courses: {
+        title: 'קורסים',
+        myCourses: 'הקורסים שלי',
+        allCourses: 'כל הקורסים',
+        enrolledCourses: 'קורסים רשומים',
+        courseDetails: 'פרטי קורס',
+        enroll: 'הירשם',
+        enrolled: 'רשום',
+        completed: 'הושלם',
+        inProgress: 'בתהליך',
+        notStarted: 'לא התחיל',
+        units: 'יחידות',
+        lectures: 'הרצאות',
+        duration: 'משך',
+        estimatedDuration: 'משך משוער',
+        prerequisites: 'דרישות קדם',
+        learningOutcomes: 'תוצאות למידה',
+        description: 'תיאור',
+        tags: 'תגיות',
+        visibility: 'נראות',
+        public: 'ציבורי',
+        private: 'פרטי',
+        createCourse: 'צור קורס',
+        editCourse: 'ערוך קורס',
+        deleteCourse: 'מחק קורס',
+        publishCourse: 'פרסם קורס',
+        unpublishCourse: 'בטל פרסום קורס',
+        noCourses: 'אין קורסים זמינים',
+        searchCourses: 'חפש קורסים...',
+      },
+      
+      // Units & Lectures
+      units: {
+        title: 'יחידות',
+        unit: 'יחידה',
+        createUnit: 'צור יחידה',
+        editUnit: 'ערוך יחידה',
+        deleteUnit: 'מחק יחידה',
+        noUnits: 'אין יחידות זמינות',
+      },
+      
+      lectures: {
+        title: 'הרצאות',
+        lecture: 'הרצאה',
+        watchLecture: 'צפה בהרצאה',
+        createLecture: 'צור הרצאה',
+        editLecture: 'ערוך הרצאה',
+        deleteLecture: 'מחק הרצאה',
+        noLectures: 'אין הרצאות זמינות',
+        videoUrl: 'קישור וידאו',
+        captions: 'כתוביות',
+        summary: 'סיכום',
+        attachments: 'קבצים מצורפים',
+        references: 'הפניות',
+        markComplete: 'סמן כהושלם',
+        completed: 'הושלם',
+        resume: 'המשך',
+        startWatching: 'התחל לצפות',
+      },
+      
+      // Games
+      games: {
+        title: 'משחקים אינטראקטיביים',
+        game: 'משחק',
+        playGame: 'שחק משחק',
+        createGame: 'צור משחק',
+        editGame: 'ערוך משחק',
+        deleteGame: 'מחק משחק',
+        noGames: 'אין משחקים זמינים',
+        score: 'ציון',
+        highScore: 'ציון גבוה',
+        attempts: 'ניסיונות',
+        completed: 'הושלם',
+        inProgress: 'בתהליך',
+        notStarted: 'לא התחיל',
+        startGame: 'התחל משחק',
+        continueGame: 'המשך משחק',
+        gameType: 'סוג משחק',
+        required: 'נדרש',
+        optional: 'אופציונלי',
+      },
+      
+      // Progress
+      progress: {
+        title: 'ההתקדמות שלי',
+        overall: 'התקדמות כוללת',
+        courseProgress: 'התקדמות קורס',
+        lecturesCompleted: 'הרצאות שהושלמו',
+        gamesCompleted: 'משחקים שהושלמו',
+        totalWatchTime: 'זמן צפייה כולל',
+        averageScore: 'ציון ממוצע',
+        lastActivity: 'פעילות אחרונה',
+        noProgress: 'אין התקדמות עדיין',
+        continueWhere: 'המשך מהמקום שבו עצרת',
+      },
+      
+      // Students (Teacher view)
+      students: {
+        title: 'תלמידים',
+        student: 'תלמיד',
+        studentDetails: 'פרטי תלמיד',
+        totalStudents: 'סך תלמידים',
+        activeStudents: 'תלמידים פעילים',
+        enrollments: 'רישומים',
+        progress: 'התקדמות',
+        performance: 'ביצועים',
+        noStudents: 'לא נמצאו תלמידים',
+        searchStudents: 'חפש תלמידים...',
+        viewDetails: 'צפה בפרטים',
+      },
+      
+      // Schools
+      schools: {
+        title: 'בתי ספר',
+        school: 'בית ספר',
+        createSchool: 'צור בית ספר',
+        editSchool: 'ערוך בית ספר',
+        deleteSchool: 'מחק בית ספר',
+        schoolName: 'שם בית ספר',
+        region: 'אזור',
+        contactEmail: 'דוא"ל ליצירת קשר',
+        noSchools: 'לא נמצאו בתי ספר',
+      },
+      
+      // Analytics
+      analytics: {
+        title: 'אנליטיקה',
+        overview: 'סקירה כללית',
+        courseAnalytics: 'אנליטיקת קורס',
+        studentAnalytics: 'אנליטיקת תלמיד',
+        totalCourses: 'סך קורסים',
+        totalStudents: 'סך תלמידים',
+        totalEnrollments: 'סך רישומים',
+        completionRate: 'שיעור השלמה',
+        averageWatchTime: 'זמן צפייה ממוצע',
+        dailyActiveUsers: 'משתמשים פעילים יומיים',
+        monthlyActiveUsers: 'משתמשים פעילים חודשיים',
+        popularCourses: 'קורסים פופולריים',
+        recentActivity: 'פעילות אחרונה',
+      },
+      
+      // Profile
+      profile: {
+        title: 'פרופיל',
+        myProfile: 'הפרופיל שלי',
+        editProfile: 'ערוך פרופיל',
+        firstName: 'שם פרטי',
+        lastName: 'שם משפחה',
+        email: 'דוא"ל',
+        language: 'שפה',
+        preferredLanguage: 'שפה מועדפת',
+        school: 'בית ספר',
+        role: 'תפקיד',
+        student: 'תלמיד',
+        teacher: 'מורה',
+        admin: 'מנהל',
+        joinedDate: 'תאריך הצטרפות',
+        lastLogin: 'התחברות אחרונה',
+      },
+      
+      // Settings
+      settings: {
+        title: 'הגדרות',
+        general: 'כללי',
+        language: 'שפה',
+        notifications: 'התראות',
+        privacy: 'פרטיות',
+        changeLanguage: 'שנה שפה',
+        selectLanguage: 'בחר שפה',
+      },
+      
+      // Languages
+      languages: {
+        en: 'English',
+        ar: 'العربية',
+        he: 'עברית',
+      },
+      
+      // Messages
+      messages: {
+        enrollSuccess: 'נרשמת לקורס בהצלחה',
+        enrollError: 'נכשל ברישום לקורס',
+        progressSaved: 'התקדמות נשמרה',
+        progressError: 'נכשל בשמירת התקדמות',
+        courseCreated: 'הקורס נוצר בהצלחה',
+        courseUpdated: 'הקורס עודכן בהצלחה',
+        courseDeleted: 'הקורס נמחק בהצלחה',
+        confirmDelete: 'האם אתה בטוח שברצונך למחוק פריט זה?',
+        noPermission: 'אין לך הרשאה לבצע פעולה זו',
+        networkError: 'שגיאת רשת. אנא נסה שוב.',
+        sessionExpired: 'פג תוקף ההפעלה שלך. אנא התחבר שוב.',
+      },
+      
+      // Errors
+      errors: {
+        required: 'שדה זה נדרש',
+        invalidEmail: 'כתובת דוא"ל לא חוקית',
+        invalidUrl: 'כתובת URL לא חוקית',
+        minLength: 'אורך מינימלי הוא {{min}} תווים',
+        maxLength: 'אורך מקסימלי הוא {{max}} תווים',
+        notFound: 'הפריט לא נמצא',
+        serverError: 'שגיאת שרת. אנא נסה שוב מאוחר יותר.',
+      },
+    },
+  },
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'ar', 'he'],
+    interpolation: {
+      escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
+  });
+
+export default i18n;
+
