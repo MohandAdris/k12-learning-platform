@@ -157,3 +157,13 @@
 ## Critical Bugs
 - [x] Fix RBAC to allow ADMIN role to access student and teacher features
 
+
+
+
+## Next Priority Features
+- [x] Create simple language switcher with buttons (no dropdown)
+- [x] Build lecture page with video player
+- [x] Implement progress tracking UI
+- [ ] Create teacher dashboard home page
+- [ ] Add course creation form for teachers
+

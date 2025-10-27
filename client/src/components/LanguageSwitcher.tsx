@@ -1,53 +1,36 @@
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Languages } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function LanguageSwitcher() {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   const languages = [
-    { code: "en", name: t('languages.en'), flag: "🇬🇧" },
-    { code: "ar", name: t('languages.ar'), flag: "🇸🇦" },
-    { code: "he", name: t('languages.he'), flag: "🇮🇱" },
+    { code: "en", label: "EN", flag: "🇬🇧" },
+    { code: "ar", label: "ع", flag: "🇸🇦" },
+    { code: "he", label: "ע", flag: "🇮🇱" },
   ];
-
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
   const changeLanguage = (langCode: string) => {
     i18n.changeLanguage(langCode);
+    // RTL direction is automatically handled by RTLProvider
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <Languages className="h-4 w-4" />
-          <span className="hidden sm:inline">{currentLanguage.name}</span>
-          <span className="sm:hidden">{currentLanguage.flag}</span>
+    <div className="flex items-center gap-1 border rounded-md p-1">
+      <Globe className="h-4 w-4 text-muted-foreground mx-1" />
+      {languages.map((lang) => (
+        <Button
+          key={lang.code}
+          variant={i18n.language === lang.code ? "default" : "ghost"}
+          size="sm"
+          onClick={() => changeLanguage(lang.code)}
+          className="h-7 px-2 text-xs"
+        >
+          {lang.flag}
         </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {languages.map((language) => (
-          <DropdownMenuItem
-            key={language.code}
-            onClick={() => changeLanguage(language.code)}
-            className="gap-2 cursor-pointer"
-          >
-            <span>{language.flag}</span>
-            <span>{language.name}</span>
-            {i18n.language === language.code && (
-              <span className="ml-auto text-primary">✓</span>
-            )}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+      ))}
+    </div>
   );
 }
 
