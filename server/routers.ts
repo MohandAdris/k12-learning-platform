@@ -29,7 +29,7 @@ const teacherProcedure = protectedProcedure.use(({ ctx, next }) => {
 });
 
 const studentProcedure = protectedProcedure.use(({ ctx, next }) => {
-  if (ctx.user.role !== 'STUDENT') {
+  if (ctx.user.role !== 'STUDENT' && ctx.user.role !== 'ADMIN') {
     throw new TRPCError({ code: 'FORBIDDEN', message: 'Student access required' });
   }
   return next({ ctx });

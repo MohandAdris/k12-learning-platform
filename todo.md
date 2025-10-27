@@ -152,3 +152,8 @@
 - [ ] Add health check endpoints
 - [ ] Create deployment checklist
 
+
+
+## Critical Bugs
+- [x] Fix RBAC to allow ADMIN role to access student and teacher features
+
