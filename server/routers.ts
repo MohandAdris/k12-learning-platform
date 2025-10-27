@@ -670,6 +670,33 @@ export const appRouter = router({
     myProgress: studentProcedure.query(async ({ ctx }) => {
       return await db.getProgressByUserId(ctx.user.id);
     }),
+    
+    getByCourse: studentProcedure
+      .input(z.object({ courseId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        // Get all progress for this user's lectures in this course
+        const allProgress = await db.getProgressByUserId(ctx.user.id);
+        
+        // Get all lectures for this course
+        const units = await db.getUnitsByCourseId(input.courseId);
+        const lectureIds = new Set<number>();
+        for (const unit of units) {
+          const lectures = await db.getLecturesByUnitId(unit.id);
+          lectures.forEach(l => lectureIds.add(l.id));
+        }
+        
+        // Filter progress to only this course's lectures
+        const courseProgress = allProgress.filter(p => lectureIds.has(p.lectureId));
+        
+        // Find the most recently updated progress
+        if (courseProgress.length === 0) return null;
+        
+        const lastProgress = courseProgress.reduce((latest, current) => {
+          return new Date(current.lastSeenAt) > new Date(latest.lastSeenAt) ? current : latest;
+        });
+        
+        return lastProgress;
+      }),
   }),
 
   gameSessions: router({

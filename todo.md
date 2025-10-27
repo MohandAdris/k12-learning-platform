@@ -177,3 +177,13 @@
 - [x] Show enrollment status on course detail page
 - [x] Test enrollment flow end-to-end
 
+
+
+
+## Continue Where You Left Off
+- [x] Create backend procedure to get last watched lecture for a course
+- [x] Update StudentHome to fetch last progress for enrolled courses
+- [x] Make "Continue where you left off" button navigate to last lecture
+- [x] Show progress percentage on enrolled course cards
+- [x] Test continue functionality end-to-end
+

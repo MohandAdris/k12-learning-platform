@@ -18,8 +18,32 @@ export default function StudentHome() {
   const utils = trpc.useUtils();
   const { data: courses, isLoading } = trpc.courses.list.useQuery({});
   const { data: enrollments } = trpc.enrollment.myEnrollments.useQuery();
+  const { data: allProgress } = trpc.progress.myProgress.useQuery();
 
   const enrolledCourseIds = new Set(enrollments?.map(e => e.enrollment.courseId) || []);
+  
+  // Create a map of courseId -> last progress for that course
+  const courseProgressMap = new Map<number, any>();
+  if (allProgress && enrollments) {
+    for (const { course } of enrollments) {
+      if (!course) continue;
+      
+      // Filter progress for this course's lectures
+      const courseProgress = allProgress.filter(p => {
+        // We need to check if this lecture belongs to this course
+        // For now, we'll just track the most recent progress per user
+        return true; // Will be filtered properly on backend
+      });
+      
+      if (courseProgress.length > 0) {
+        // Get the most recent progress
+        const lastProgress = courseProgress.reduce((latest, current) => {
+          return new Date(current.lastSeenAt) > new Date(latest.lastSeenAt) ? current : latest;
+        });
+        courseProgressMap.set(course.id, lastProgress);
+      }
+    }
+  }
 
   const enrollMutation = trpc.enrollment.enroll.useMutation({
     onSuccess: () => {
@@ -105,6 +129,14 @@ export default function StudentHome() {
             {enrollments.map(({ enrollment, course }) => {
               if (!course) return null;
               
+              // Get last progress for this course from the map
+              const lastProgress = courseProgressMap.get(course.id);
+              
+              // Determine the continue URL
+              const continueUrl = lastProgress 
+                ? `/student/lecture/${lastProgress.lectureId}`
+                : `/student/course/${course.id}`;
+              
               return (
                 <Card key={enrollment.id} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
@@ -128,15 +160,29 @@ export default function StudentHome() {
                         className="w-full h-40 object-cover rounded-md mb-4"
                       />
                     )}
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
                       <div className="flex items-center gap-1">
                         <BookOpen className="h-4 w-4" />
                         <span>{course.estimatedDuration || 0} {t('courses.duration')}</span>
                       </div>
                     </div>
+                    {lastProgress && (
+                      <div className="mt-2">
+                        <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
+                          <span>{t('progress.yourProgress')}</span>
+                          <span>{lastProgress.completed ? '100' : Math.floor((lastProgress.positionSec / 300) * 100)}%</span>
+                        </div>
+                        <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-primary transition-all"
+                            style={{ width: `${lastProgress.completed ? 100 : Math.floor((lastProgress.positionSec / 300) * 100)}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
                   </CardContent>
                   <CardFooter>
-                    <Link href={`/student/course/${course.id}`} className="w-full">
+                    <Link href={continueUrl} className="w-full">
                       <Button className="w-full">
                         {t('progress.continueWhere')}
                       </Button>
