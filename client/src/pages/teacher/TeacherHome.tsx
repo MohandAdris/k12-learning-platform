@@ -134,9 +134,11 @@ export default function TeacherHome() {
                             {course.publishedAt ? t("common.published") : t("common.draft")}
                           </p>
                         </div>
-                        <Button variant="ghost" size="sm">
-                          {t("common.edit")}
-                        </Button>
+                        <Link href={`/teacher/courses/${course.id}/edit`}>
+                          <Button variant="ghost" size="sm">
+                            {t("common.edit")}
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </Link>
