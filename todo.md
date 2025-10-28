@@ -1,11 +1,12 @@
 # K-12 Learning Platform - Project TODO
 
-## Bug Fixes (Priority)
+## Bug Fixes (Priority) - PHASE 1 COMPLETE ✅
 - [x] Fix language switcher dropdown not appearing - added LanguageSwitcher to TeacherHome
 - [x] Fix unit accordion not expanding to show lectures
 - [x] Update courses.get procedure to include lectures with units
 - [x] Fix delete confirmation dialog i18n issue - added missing translations
-- [ ] Test enrollment flow functionality
+- [x] Test enrollment flow functionality - working correctly with loading states
+- [x] Add loading states to all forms - LectureForm and CourseUnits updated
 
 ## Phase 1: Database Schema & Backend Setup
 - [x] Update Drizzle schema with multilingual support (English, Arabic, Hebrew)
