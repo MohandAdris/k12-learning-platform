@@ -348,7 +348,7 @@ export default function CourseUnits() {
                         disabled={createUnitMutation.isPending || updateUnitMutation.isPending}
                       >
                         <Save className="w-4 h-4 mr-2" />
-                        {editingUnit.id ? t("common.update") : t("common.create")}
+                        {createUnitMutation.isPending || updateUnitMutation.isPending ? t("common.loading") : (editingUnit.id ? t("common.update") : t("common.create"))}
                       </Button>
                       <Button
                         type="button"

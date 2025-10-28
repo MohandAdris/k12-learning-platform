@@ -429,7 +429,7 @@ export default function LectureForm() {
           </Link>
           <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
             <Save className="h-4 w-4 mr-2" />
-            {isEditing ? t('common.save') : t('common.create')}
+            {createMutation.isPending || updateMutation.isPending ? t('common.loading') : (isEditing ? t('common.save') : t('common.create'))}
           </Button>
         </div>
       </form>
