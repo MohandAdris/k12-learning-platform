@@ -96,6 +96,7 @@ const resources = {
         unpublishCourse: 'Unpublish Course',
         noCourses: 'No courses available',
         searchCourses: 'Search courses...',
+        deleteConfirmation: 'Are you sure you want to delete this course? This action cannot be undone and will remove all units, lectures, and student progress.',
       },
       
       // Units & Lectures
@@ -435,6 +436,7 @@ const resources = {
         unpublishCourse: 'إلغاء نشر الدورة',
         noCourses: 'لا توجد دورات متاحة',
         searchCourses: 'البحث عن دورات...',
+        deleteConfirmation: 'هل أنت متأكد من حذف هذه الدورة؟ لا يمكن التراجع عن هذا الإجراء وسيتم حذف جميع الوحدات والمحاضرات وتقدم الطلاب.'
       },
       
       // Units & Lectures
@@ -766,6 +768,7 @@ const resources = {
         unpublishCourse: 'בטל פרסום קורס',
         noCourses: 'אין קורסים זמינים',
         searchCourses: 'חפש קורסים...',
+        deleteConfirmation: 'האם אתה בטוח שברצונך למחוק קורס זה? פעולה זו אינה ניתנת לביטול ותסיר את כל היחידות והשיעורים וההתקדמות של התלמידים.'
       },
       
       // Units & Lectures

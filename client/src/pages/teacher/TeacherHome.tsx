@@ -5,6 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { BookOpen, GraduationCap, TrendingUp, Users } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function TeacherHome() {
   const { user } = useAuth();
@@ -63,12 +64,15 @@ export default function TeacherHome() {
               </h1>
               <p className="text-gray-600 mt-1">{t("teacher.dashboardSubtitle")}</p>
             </div>
-            <Link href="/teacher/courses/create">
-              <Button size="lg">
-                <BookOpen className="w-4 h-4 mr-2" />
-                {t("teacher.createCourse")}
-              </Button>
-            </Link>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
+              <Link href="/teacher/courses/create">
+                <Button size="lg">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  {t("teacher.createCourse")}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

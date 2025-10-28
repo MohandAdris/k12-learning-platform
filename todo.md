@@ -1,9 +1,10 @@
 # K-12 Learning Platform - Project TODO
 
 ## Bug Fixes (Priority)
-- [ ] Fix language switcher dropdown not appearing (needs alternative approach)
+- [x] Fix language switcher dropdown not appearing - added LanguageSwitcher to TeacherHome
 - [x] Fix unit accordion not expanding to show lectures
 - [x] Update courses.get procedure to include lectures with units
+- [x] Fix delete confirmation dialog i18n issue - added missing translations
 - [ ] Test enrollment flow functionality
 
 ## Phase 1: Database Schema & Backend Setup
